@@ -26,6 +26,7 @@ deploy 1/2 in 1 public cloud & half in the other || use 3rd party tool || etc.
 - **Hybrid**: Public and Private cloud <br>
   - public + private of same vendor as 1 unified platform
   - *NOT* public cloud + legacy on-premises => (this means hybrid env or network)
+   
 ![image](https://user-images.githubusercontent.com/72099370/167738904-a57bcd8d-98f5-4435-8b47-de15488b7d90.png)
 
 <br>
