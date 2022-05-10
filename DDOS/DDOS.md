@@ -3,7 +3,7 @@
 - Attacks designed to **overload** websites
 - **Compete** against 'legitimate connections'
 - **Distributed** - hard to block individual IPs/Ranges
-- Often invovle large armies of compromised machines (botnets)
+- Often involve large armies of compromised machines (botnets)
 
 <br>
 
@@ -18,11 +18,13 @@
 ![DDOS_ApplicationLayerAttack](https://user-images.githubusercontent.com/72099370/167539298-9d53d148-ddf2-4f7b-a3f9-b58de3c874b4.png)
 
 
+
 #### 2. Protocol Attack - SYN Flood 
 - Take advantage of connection-based nature of requests. Normally, connection is initiated through 3-stage-handshake 
 <br> => spoof source IP address & initiate connection attempt with server. Server tries to perform step2 of handshake but can't contact source address because it is spoofed. The hand will wait for a specified duration consumes network resources. 
 ![DDOS_ProtocolAttack](https://user-images.githubusercontent.com/72099370/167541058-fb443075-5c03-4fd0-bf9f-1c7f0cc91e6e.png)
-
+*3-way Handshake:*
+![3-way-handshake](https://user-images.githubusercontent.com/72099370/167541618-ee35c683-4e82-415e-97a4-0ec35f5f4640.jpg)
 
 #### 3. Volumetric/Amplification - DNS Amplification
 - Relies on how certain protocols such as DNS (DNS resolution) only takes small amount of data to make a request but can deliver a large amount of data
