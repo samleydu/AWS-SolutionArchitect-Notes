@@ -53,5 +53,22 @@ Looking at the image...
 - As packets move through each intermediate L2 network, it will be inserted or encapsulated in a L2 frame specific for that network
   - A packet might exist in 10s of different frame throughout its route to its destination
  
+ <br>
  
+ ## IP Addressing (v4) - IPv4
+ - IP addressing is what identifies a device which uses L3 IP networking. 
+
+![Layer3_IPAddressing-IPv4](https://user-images.githubusercontent.com/72099370/167764583-b5ee6f75-697e-4287-8ee0-91b1c60e0cd5.png)
+
+Looking at the image...
+- Pure network connectivity POV: if you have valid IPv4 address, you can send packets to 133.33.3.7
+  - The IPv4 address will at least start to route to this 133.33.3.7
+    - Possible blocks in the way: firewalls, security restrictions, or IP is offline **but** packets will move over the internet on its way to 133.33.3.7
+- **All** IP addresses are formed in 2 different part: 133.33/./3.7
+  - Network part: which IP network the IP address belongs to (133.33)
+  - Host part: represents hosts on that network (3.7) - i.e. a laptop
+
+It's important to understand how data gets from local location to remote network whe ngiven 2 IP addreses. How to tell if they're on the same IP network or different IP networks?
+- If network parts match: same IP network, and vice versa. 
+(stopped at 3:10 - L3 part 2)
 
