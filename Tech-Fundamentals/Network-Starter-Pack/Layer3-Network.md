@@ -66,9 +66,28 @@ Looking at the image...
     - Possible blocks in the way: firewalls, security restrictions, or IP is offline **but** packets will move over the internet on its way to 133.33.3.7
 - **All** IP addresses are formed in 2 different part: 133.33/./3.7
   - Network part: which IP network the IP address belongs to (133.33)
+    - If network parts match: same IP network - devicces are local. If not, devices are remote.  
   - Host part: represents hosts on that network (3.7) - i.e. a laptop
+- **Static IP:** IP addresses assigned by humans.
+- **Dynamic IP:** IP addresses assigned by machines - server software Dynamic Host Configuration Protocol (DHCP) running on network
 
-It's important to understand how data gets from local location to remote network whe ngiven 2 IP addreses. How to tell if they're on the same IP network or different IP networks?
-- If network parts match: same IP network, and vice versa. 
-(stopped at 3:10 - L3 part 2)
+<br>
 
+## Subnet Mask
+Subnet masks are used to determine which part of an IP address is the network apart and which is the host poart.
+- 2 IP addresses with same network part: they are on the same IP network (local)
+  - This is essential so that machine can identify when it can send data directly on the same local network or when IP routing needs to be used to transfer packets across different intermediate networks. 
+![Layer3_SubnetMask](https://user-images.githubusercontent.com/72099370/167969551-12dfba68-6b29-404c-b236-22ba1a01374f.png)
+
+<br>
+
+## Route Tables & Routes
+- Every routers has at least 1 route table
+- Route tables can be statically populated, or there are protocols such as Border Gateway Protcol (BGP) which allow routers to communicate with each other to exchange networks they know about => the core of the internet functions
+![Layer3_RouteTables Routes](https://user-images.githubusercontent.com/72099370/167970693-e75b1f84-0706-44d1-8ab1-cb0a1c153c06.png)
+
+Looking at the image...
+- ISP router is forwarding the packet through to AWS router at L2
+  - Packet does not change but frame does.
+  - It has AWS MAC address as its destination
+    - How is the MAC address determined? => **Address resolution protocol.**
