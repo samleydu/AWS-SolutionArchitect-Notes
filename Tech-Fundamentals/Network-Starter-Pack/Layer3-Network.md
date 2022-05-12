@@ -76,7 +76,7 @@ Looking at the image...
 ## Subnet Mask
 Subnet masks are used to determine which part of an IP address is the network apart and which is the host poart.
 - 2 IP addresses with same network part: they are on the same IP network (local)
-  - This is essential so that machine can identify when it can send data directly on the same local network or when IP routing needs to be used to transfer packets across different intermediate networks. 
+- This is essential so that machine can identify when it can send data directly on the same local network or when IP routing needs to be used to transfer packets across different intermediate networks. 
 ![Layer3_SubnetMask](https://user-images.githubusercontent.com/72099370/167969551-12dfba68-6b29-404c-b236-22ba1a01374f.png)
 
 <br>
@@ -91,3 +91,45 @@ Looking at the image...
   - Packet does not change but frame does.
   - It has AWS MAC address as its destination
     - How is the MAC address determined? => **Address resolution protocol.**
+
+<br>
+
+## Address Resolution Protocol (ARP)
+- Facilitates intraction between L2 and L3
+- Is generally used when you have L3 packet needed to be encapsulated inside a frame to be setn to a MAC address
+  - You don't initially know the MAC address => need a protocol to find MAC address for a given IP address.
+  - Example: AWS is the destination of IP packets and we are forwarding them via home router (default gateway). We need MAC address of this default gateway to send the frame containing the packet => ARP comes in to give us the MAC address for a given IP address.
+
+#### Even if devices are communicating L3, they will still need L2 for local communications.
+- Local network: one L2 frame per packet
+- Remote network: many different L2 frames per packet
+![Layer3_ARP](https://user-images.githubusercontent.com/72099370/167971829-5d1736c7-2b37-48b5-8a70-103e592642a8.png)
+
+<br>
+
+## IP Routing
+Looking at the image...
+- D1 to D2: local
+- D2 to D3: different networks
+![Layer3_IPRouting](https://user-images.githubusercontent.com/72099370/167972492-48fcf2ef-ff74-4cb6-97e8-75f34a6d95ec.png)
+
+<br>
+
+## Summary
+- IP addresses (IPv4/6) - **cross network addressing**
+- ARP - find the MAC address for this IP
+- Route - where to forward this packet
+- Route Tables - multiple routes
+- Router - moves packets from source to destination - Encapsulating in L2 on the way
+- Device <=> Device communications over the internet..
+
+However...
+- **No** method for channels of communications... source IP <=> destination IP only
+  - L3 provides packets which only have src IP and dest IP.
+  - Given 2 devices => only 1 stream of communication
+  - Can't have different apps on those devices communicating at the same time => critical limitation solved by L4 and above
+- **Can be delivered out of order...**
+  - Dependent on network conditions
+  - If application relies on same ordering at point of receipt is at the point of transmission => need additional things on top of L3: L4 can assist.
+
+
