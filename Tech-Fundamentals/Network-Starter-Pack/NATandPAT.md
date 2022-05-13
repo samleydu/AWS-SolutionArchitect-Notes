@@ -1,4 +1,5 @@
 # Network Address Translation (NAT)
+Network Address Translation (NAT) is the process of adjusting packets source and destination addresses to allow transit across different networks. The main types you will encounter are Static NAT, Dynamic NAT and Port Address Translation (PAT). NAT is most commonly experience in home or office networks where private IPv4 addresses are translated to a single public address, allowing outgoing internet access.
 - Designed to address the shortage of IPv4 addresses
   - IPv4 are either pubicly routable or fall within private address space
     - Publicly routable addreses are assigned by a central agency and regional agencies -> assign them to Internet Service Providers (ISP) -> ISPs allocate them to business or consumer end-users. => must be unique
