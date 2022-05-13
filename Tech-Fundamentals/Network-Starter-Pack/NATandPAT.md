@@ -37,8 +37,17 @@ Looking at the image...
 <br>
 
 ## Port Address Translation (PAT)
+#### This is how NAT gateway within AWS works
 - Many private : 1 public (NATGW)
   - probably what our home router does => overloading using PAT with many devices.
 - Uses ports to identify individual devices.
+- Only 1 device can use the same public IP because these source ports are randomly assigned
+  - If multiple devices communicate with the same destination service using the same destination port, and they happen to use the same source port, then it will look like the same connection.
+- **NAT table:**
+  - When response data comes back, the table can be referenced to ensure the packet reaches its destination
 
+Looking at the image...
+- Red and Yellow have  the same source port (looks like the same connection) so NAT creates different public source ports even though same private source port (look at the NAT table)
+  - every TCP connection, in addtion to a source and destination IP address, has a source and destination port
+  
 ![PAT_PortAddressTranslation](https://user-images.githubusercontent.com/72099370/167988286-df0401d2-d8cf-4d11-b5eb-ea68f7572278.png)
